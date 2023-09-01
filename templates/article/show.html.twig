@@ -1,10 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/detail.css') }}">
-{% endblock %}
-
 {% block title %}Статья: {{ article }}{% endblock %}
 
 {% block body %}
@@ -32,8 +27,8 @@
                                     <div class="text-muted align-self-center ml-4">
                                         26 days ago
                                     </div>
-                                    <div class="text-muted align-self-center ml-4 article-detail-hearts">
-                                        120
+                                    <div class="text-muted align-self-center ml-4 article-detail-hearts" data-type="like" data-item="likes">
+                                        <span data-item="likesCount">120</span>
                                         <i class="far fa-heart text-danger"></i>
                                     </div>
                                 </div>

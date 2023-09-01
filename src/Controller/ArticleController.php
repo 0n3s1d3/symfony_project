@@ -5,15 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Twig\Environment;
 
 class ArticleController extends AbstractController
 {
     /**
      * @Route("/", name="app_homepage")
      */
-    public function homepage(): Response
+    public function homepage(Environment $twig): Response
     {
-        return $this->render('article/homepage.html.twig');
+        $html = $twig->render('article/homepage.html.twig');
+        return new Response($html);
     }
 
     /**
